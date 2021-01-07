@@ -1,0 +1,49 @@
+<section class="gagnants-js">
+    <h2 class="h2">
+        Gagnants
+    </h2>
+
+    <div class="row data-js" data-componant="awardWinnings" data-count="all" >
+        <div class="col col-lg-6">
+
+            <ul class="list-group book-list-js">
+                <li class="list-group-item">
+                    <article class="book" id="book${book.id}">
+                        <header class="book-head">
+                            <span class="book-title h5">
+                                ${book.title}
+                            </span> <small class="tag text-muted">${book.hash}</small>
+                        </header>
+                        <picture class="book-picture">
+                            <img src="${book.cover}" alt="">
+                        </picture>
+                        <main class="book-main d-none">
+                            <p>
+                                ${book.description}
+                            </p>
+                        </main>
+                        <footer class="book-foot">
+                            de <span class="book-author h6">
+                                ${book.author}
+                            </span> chez
+                            <span class="book-editor h6">${book.editor}</span>
+
+                        </footer>
+                    </article>
+                </li>
+            </ul>
+        </div>
+        <div class="col col-lg-6">
+            <section class="book-hover-show">
+                <picture class="book-hover-picture">
+                    <!-- insertion d'image -->
+                    <img src="../img/plume.png" alt="">
+                </picture>
+            </section>
+
+            <section class="commentaire bg-success">
+                commentaire
+            </section>
+        </div>
+    </div>
+</section>

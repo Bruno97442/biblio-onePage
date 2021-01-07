@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Un livre bien",
+        "description": "1 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "cover": "/img/covers/sl1.jpg",
+        "author": "Alain HAUTEUR",
+        "editor": "Acheter édition",
+        "hash": [
+            "2020",
+            "romanFR"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "la peau de l'ours",
+        "description": "2 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "cover": "/img/covers/sl2.jpg",
+        "author": "Natacha SOEUR",
+        "editor": "Skin édition",
+        "hash": [
+            "2020",
+            "documentaireIN"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Une biographie de folie",
+        "description": "3 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "cover": "/img/covers/sl3.jpg",
+        "author": "Ivan TARDIZ",
+        "editor": "Celapete éditor",
+        "hash": [
+            "2019",
+            "biographieFR"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Ave Roman",
+        "description": "4 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "cover": "/img/covers/sl4.jpg",
+        "author": "Cesar saladine",
+        "editor": "Sparciate édition",
+        "hash": [
+            "2019",
+            "romanIN"
+        ]
+    }
+]

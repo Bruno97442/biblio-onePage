@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 1,
+        "_name": "admin",
+        "_password": "Biblio6300%",
+        "_role": "administrateur"
+    },
+    {
+        "_id": 2,
+        "_name": "redacteur",
+        "_password": "Redact6300%",
+        "_role": "redacteur"
+    },
+    {
+        "_id": 3,
+        "_name": "superviseur",
+        "_password": "Superv6300%",
+        "_role": "superviseur"
+    }
+]
