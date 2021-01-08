@@ -1,0 +1,56 @@
+$z : $nul;
+
+.logo {
+    position: relative;
+    &-picture {
+        position: relative;
+        display: inline-block;
+        width: 10px;
+        height: 1rem;
+        margin-left: -15px;
+        margin-right: 15px;
+
+        img {
+            width: 40px;
+            top: -1rem;
+            position: absolute;
+            // object-fit: cover;
+        }
+    }
+ 
+}
+
+.main{
+    position: relative;
+    min-height: 500px;
+    overflow-y: hidden;
+    > section{
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.leave{
+    // position: absolute !important;
+    animation: leave 1s ease-out;
+}
+.comeIn{
+    // position: absolute !important;
+    animation: comeIn 1s ease-in;
+}
+@keyframes leave{
+    to{
+        left: -100%;
+        opacity: 0.5;
+    }
+}
+@keyframes comeIn{
+    from{
+        // left: 100%;
+        opacity: 0.5;
+    }
+    to{
+        left: 0;
+    }
+}
