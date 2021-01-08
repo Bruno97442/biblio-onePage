@@ -7,7 +7,7 @@ import { Auth } from "./Auth.js";
 import { FormEntity } from "./form/Formentity.js";
 import { Session } from "./Session.js";
 import { Nav } from "./Nav.js";
-import { Config } from "../config/config.js";
+import { Config } from "../config/Config.js";
 import { XMLExtractor } from "./XMLExtractor.js";
 import { XMLBook } from "./componant/XMLBook.js";
 // http://127.0.0.1:5500/public/index.html
@@ -19,7 +19,7 @@ import { XMLBook } from "./componant/XMLBook.js";
  * La Nav gérer les droits d'accés dans la bar de navigation
  */
 const R = new Router(routes),
-    session = new Session(sessionStorage, Config.sessionName),
+    session = new Session(window[Config.storageMethod], Config.sessionName),
     nav = new Nav(R, _('.nav-js'))
 let loaded = []
 nav.run(session.ifActive())

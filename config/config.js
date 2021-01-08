@@ -1,3 +1,5 @@
 export const Config = {
-    sessionName : 'biblioSession'
+    sessionName : 'biblioSession',
+    storageMethod : 'sessionStorage'
+    // storageMethod : 'localStorage'
 }
