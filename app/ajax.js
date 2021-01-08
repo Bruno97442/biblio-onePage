@@ -17,6 +17,7 @@ let template = {
  * @returns {Promise}
  */
 async function ajax(route) {
+    console.log(route.path)
     const r = await fetch(route.path)
     return await r.text()
 }

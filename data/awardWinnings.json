@@ -90,5 +90,97 @@
             "2019",
             "romanIN"
         ]
+    },
+    {
+        "_id": 5,
+        "_title": "Un livre bien",
+        "_description": "5 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl5.jpg",
+        "_author": "Alain HAUTEUR",
+        "_editor": "Acheter édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
+            "2020",
+            "romanFR"
+        ]
+    },
+    {
+        "_id": 6,
+        "_title": "la peau de l'ours",
+        "_description": "6 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl6.jpg",
+        "_author": "Natacha SOEUR",
+        "_editor": "Skin édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
+            "2018",
+            "documentaireIN"
+        ]
+    },
+    {
+        "_id": 7,
+        "_title": "Une biographie de folie",
+        "_description": "7 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl7.jpg",
+        "_author": "Ivan TARDIZ",
+        "_editor": "Celapete éditor",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
+            "2019",
+            "biographieFR"
+        ]
+    },
+    {
+        "_id": 8,
+        "_title": "Ave Roman",
+        "_description": "8 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl8.jpg",
+        "_author": "Cesar saladine",
+        "_editor": "Sparciate édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
+            "2019",
+            "romanIN"
+        ]
     }
 ]

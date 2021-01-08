@@ -1,5 +1,5 @@
 import { ael, _, __ } from "./broToolBox.js";
-import { Router } from "/app/router.js";
+import { Router } from "./Router.js";
 import { routes } from "../config/route.js";
 import { ajax, loadManager } from "./ajax.js";
 import { service } from "./Service.js";
