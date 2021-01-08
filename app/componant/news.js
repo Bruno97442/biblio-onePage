@@ -1,27 +1,27 @@
 export const newsComponant = articleData =>
-`<article class="new article${articleData.id}">
+`<article class="new article${articleData._id}">
 <a href="article">
 
     <header>
-        <h${+articleData.id === 1 ? 1 : 2}>
+        <h${+articleData._id === 1 ? 1 : 2}>
             <span class="puce"></span>
-            <span>${articleData.title}</span>
+            <span>${articleData._title}</span>
         </h${articleData == "une" ? 1 : 2}>
 
     </header>
     
     <section class="article-media">
         <picture class="article-picture">
-            <img src="${articleData.img}" alt="${articleData.imgAlt ? articleData.imgAlt : "C'est de l'article"}">
+            <img src="${articleData._img}" alt="${articleData._imgAlt ? articleData._imgAlt : "C'est de l'article"}">
         </picture>
     </section>
         <main>
-            ${articleData.introduction ? '<p>' + articleData.introduction + '</p>' :'' }
-            ${articleData.content ? '<p>' + articleData.content + '</p>' :'' }
+            ${articleData._introduction ? '<p>' + articleData._introduction + '</p>' :'' }
+            ${articleData._content ? '<p>' + articleData._content + '</p>' :'' }
         </main>
 
 </a>
-    ${articleData.id !== "une" ? "" :
+    ${articleData._id !== "une" ? "" :
     `<footer>
         <ul class="sameway-articles">
             <li>

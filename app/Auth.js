@@ -1,5 +1,3 @@
-import { service } from "./Service.js";
-
 export class Auth {
 
     _savedUser;
@@ -7,7 +5,7 @@ export class Auth {
         return this._savedUser;
     }
 
-    constructor() {
+    constructor(service) {
         this.service = service
     }
 

@@ -1,48 +1,92 @@
 [
     {
-        "id": 1,
-        "title": "Un livre bien",
-        "description": "1 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
-        "cover": "/img/covers/sl1.jpg",
-        "author": "Alain HAUTEUR",
-        "editor": "Acheter édition",
-        "hash": [
+        "_id": 1,
+        "_title": "Un livre bien",
+        "_description": "1 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl1.jpg",
+        "_author": "Alain HAUTEUR",
+        "_editor": "Acheter édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
             "2020",
             "romanFR"
         ]
     },
     {
-        "id": 2,
-        "title": "la peau de l'ours",
-        "description": "2 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
-        "cover": "/img/covers/sl2.jpg",
-        "author": "Natacha SOEUR",
-        "editor": "Skin édition",
-        "hash": [
+        "_id": 2,
+        "_title": "la peau de l'ours",
+        "_description": "2 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl2.jpg",
+        "_author": "Natacha SOEUR",
+        "_editor": "Skin édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
             "2020",
             "documentaireIN"
         ]
     },
     {
-        "id": 3,
-        "title": "Une biographie de folie",
-        "description": "3 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
-        "cover": "/img/covers/sl3.jpg",
-        "author": "Ivan TARDIZ",
-        "editor": "Celapete éditor",
-        "hash": [
+        "_id": 3,
+        "_title": "Une biographie de folie",
+        "_description": "3 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl3.jpg",
+        "_author": "Ivan TARDIZ",
+        "_editor": "Celapete éditor",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
             "2019",
             "biographieFR"
         ]
     },
     {
-        "id": 4,
-        "title": "Ave Roman",
-        "description": "4 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
-        "cover": "/img/covers/sl4.jpg",
-        "author": "Cesar saladine",
-        "editor": "Sparciate édition",
-        "hash": [
+        "_id": 4,
+        "_title": "Ave Roman",
+        "_description": "4 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_cover": "/img/covers/sl4.jpg",
+        "_author": "Cesar saladine",
+        "_editor": "Sparciate édition",
+        "_retailer":"https://www.lelivreatune.com",
+        "_criticisms": [
+            {
+                "_by": "anonyme",
+                "_content": "Fabuleux"
+            },
+            {
+                "_by": "critique legendaire",
+                "_content": "l'émotion globuleux"
+            }
+        ],
+        "_hash": [
             "2019",
             "romanIN"
         ]

@@ -1,29 +1,36 @@
 export class Session {
 
-    storageName = 'biblioSession'
+    storageName
+    user = {}
+    /**
+     * gére la sauvegarde des données
+     * @param {WindowLocalStorage | WindowSessionStorage} browserStorage 
+     */
+    constructor(browserStorage, storageName) {
 
-    constructor() {
-        this.user = user
-        this.storage = sessionStorage
+        this.storage = browserStorage
+        this.storageName = storageName
     }
 
     /**
      * lance les mises à jours de l'app selon
      * @param {callback} callback 
      */
-    ifActive(callback) {
-        return !!this.storage.getItem('biblioSession')
-        ? callback()
-        : false
+    ifActive(sessionName) {
+        return this.storage.getItem(this.storageName)
+            ? JSON.parse(this.storage.getItem(this.storageName))
+            : { _role: "false" }
     }
 
     set(user, callback, param) {
         this.storage.setItem(this.storageName, JSON.stringify(user))
-        if(callback){
+        this.user = user
+        if (callback) {
             if (param) {
                 callback(param)
             }
             callback()
         }
     }
+
 }
