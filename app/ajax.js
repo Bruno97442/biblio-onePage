@@ -1,15 +1,7 @@
 import { addClass, rmClass, _, __ } from "./broToolBox.js";
-import { service, compoLoop } from "./Service.js";
-import { rulesComponant } from "./componant/rules.js";
-import { awardWiningsComponant } from "./componant/awardWinnings.js";
-import { newsComponant } from "./componant/news.js";
 import { FormController } from "../library/broform/app/Formcontroller.js";
 
-let template = {
-    rules: rulesComponant,
-    awardWinnings: awardWiningsComponant,
-    news: newsComponant
-}
+
 
 /**
  * charge du text d'une autre page
@@ -29,13 +21,14 @@ const StrToHTML = string => {
     return document.createRange().createContextualFragment(string).firstElementChild
 }
 
-const loadDelegate = (route, ajaxFunc, className, template) =>
+
+const loadDelegate = ({ route, ajaxFunc, main, classAnimate, template, service, compoLoop }) =>
     // chercher le template page
     ajaxFunc(route).then(pageData => {
-        let main = _('.main-js')
+        let { comeIn, leave } = classAnimate
         pageData = StrToHTML(pageData)
-        rmClass('leave', pageData)
-        addClass(className, pageData)
+        rmClass(leave, pageData)
+        addClass(comeIn, pageData)
 
         let formReceiver = __('form', pageData)
         if (formReceiver) formReceiver.forEach(form => {
@@ -84,10 +77,9 @@ const loadDelegate = (route, ajaxFunc, className, template) =>
  * @param {Function} ajaxFunc 
  * @param {Object} Route 
  */
-const loadManager = (loadedTabs, ajaxFunc, Route) => {
-
-    let found = loadedTabs.findIndex(x => x.name === Route.name)
-    let main = _('.main-js')
+const loadManager = (loadNeeds) => {
+    let { loadedTabs, main, classAnimate, route, nav } = loadNeeds
+    let found = loadedTabs.findIndex(x => x.name === route.name)
     // Stock l'objet en local pour charger plus rapidement après la première
     if (found >= 0 && false) {
         main.firstElementChild.remove()
@@ -95,15 +87,18 @@ const loadManager = (loadedTabs, ajaxFunc, Route) => {
     } else {
         if (main.firstElementChild) {
             let child = main.firstElementChild
-            rmClass('comeIn', child)
-            addClass('leave', child)
+            rmClass(classAnimate.comeIn, child)
+            addClass(classAnimate.leave, child)
+            nav.disabledAllToggle()
             setTimeout(() => {
-
+                
                 child.remove()
+                nav.disabledAllToggle(false)
             }, 500)
         }
 
-        loadDelegate(Route, ajaxFunc, 'comeIn', template)
+        loadDelegate(loadNeeds)
+
 
     }
 }

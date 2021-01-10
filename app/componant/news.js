@@ -1,10 +1,10 @@
 export const newsComponant = articleData =>
-`<article class="new article${articleData._id}">
+`<article class="article article${articleData._id}">
 <a class=new-link href="news-${articleData._id}">
 
-    <header>
+    <header class="article-header">
         <h${+articleData._id === 1 ? 1 : 2}>
-            <span class="puce"></span>
+            <span class="article-puce"></span>
             <span>${articleData._title}</span>
         </h${articleData == "une" ? 1 : 2}>
 
@@ -16,26 +16,35 @@ export const newsComponant = articleData =>
         </picture>
     </section>
         <main>
-            ${articleData._introduction ? '<p>' + articleData._introduction + '</p>' :'' }
-            ${articleData._content ? '<p>' + articleData._content + '</p>' :'' }
+            ${articleData._introduction ? `<p class="h6 m-1"> ${articleData._introduction} </p>` :'' }
+            ${articleData._content ? `<p class="text-muted text-justify"> ${articleData._content.substr(0, 100)} [...]</p>` :'' }
         </main>
 
 </a>
-    ${articleData._id !== "une" ? "" :
-    `<footer>
-        <ul class="sameway-articles">
-            <li>
-                    <a href="">
-                        <i class="fab fa-facebook" aria-hidden="true"></i>
-                        provident numquam dolor eos unde repellendus soluta?
-                    </a>
-            </li>
-            <li>
-                    <a href="">
-                        <i class="fab fa-instagram fa-3x" aria-hidden="true"></i>
-                        provident numquam dolor eos unde repellendus soluta?
-                    </a>
-            </li>
+    <footer class="article-footer">
+    <ul class="sameway-articles d-inline">
+    </ul>
+        <ul class="list-inline justify-content-center float-right">
+        <li class="list-inline-item p-1">
+            <i class="text-primary fab fa-facebook fa-2x" aria-hidden="true"></i>
+        </li>
+        <li class="list-inline-item p-1">
+            <i class="text-primary fab fa-twitter fa-2x" aria-hidden="true"></i>
+        </li>
+        <li class="list-inline-item p-1">
+            <i class="text-primary fab fa-linkedin fa-2x" aria-hidden="true"></i>
+        </li>
+        <li class="list-inline-item p-1">
+            <i class="text-primary fab fa-instagram fa-2x" aria-hidden="true"></i>
+        </li>
+        <li class="list-inline-item p-1 text-center">
+            <i class="text-primary fa fa-share-alt-square fa-2x" aria-hidden="true"></i>
+        </li>
+        <li class="list-inline-item p-1 text-center">
+        <a class="book-rss" title="télécharger le PDF" href="PDF-${articleData._id}-${articleData._title.replaceAll(' ', '_')}"> <i class="fas fa-rss fa-2x" aria-hidden="true"></i></a>
+
+        </li>
         </ul>
-    </footer> `}
+    </footer> 
 </article>`
+

@@ -12,7 +12,7 @@ export class Auth {
     /**
      * vérifie si l'utilisateur existe dans la bdd
      * @param {FormEntity} user 
-     * @returns {Promise<InstanceType>} 
+     * @returns {Promise<InstanceType>} Promise<InstanceType>
      */
     async validate(user) {
         return await this.service('users').then(users => {

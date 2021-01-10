@@ -13,7 +13,7 @@ export class Router {
     }
 
     getUrl() {
-        
+
         return window.location.pathname
     }
 
@@ -29,22 +29,30 @@ export class Router {
         alert('error : 404')
     }
 
+    /**
+     * retourne la route selon l'url
+     */
     match() {
-        return this.routes.find(route => this.url().match(route))
+        let pathname = location.search === "" ? this.getUrl().match(/[a-zA-Z]+$/)[0] : location.search.split('=')[1]
+        return this.routes.find(route =>
+            route.name === pathname
+        )
     }
+
+    /**
+     * initialise la route si le path dirige vers le dossier public
+     */
     init() {
         if (location.pathname.match(/^\/[public]/)) {
-
+            // let routeName
             const s = location.search
             if (s) {
                 const pos = s.match('=').index + 1,
                     routeName = s.slice(pos)
                 this.rewrite(routeName)
-
                 return this.getRoute(routeName)
             }
-
-            this.rewrite('home')
+            this.rewrite(routeName)
         }
     }
     rewrite(routeName) {

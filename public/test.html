@@ -7,39 +7,42 @@
 </head>
 
 <body>
-  <script type="text/javascript">
-var windowObjectReference = null; // global variable
-
-function openFFPromotionPopup() {
-  if(windowObjectReference == null || windowObjectReference.closed)
-  /* if the pointer to the window object in memory does not exist
-     or if such pointer exists but the window was closed */
-
-  {
-    windowObjectReference = window.open("http://www.spreadfirefox.com/",
-   "PromoteFirefoxWindowName", "resizable,scrollbars,status");
-    /* then create it. The new window will be created and
-       will be brought on top of any other window. */
-  }
-  else
-  {
-    windowObjectReference.focus();
-    /* else the window reference must exist and the window
-       is not closed; therefore, we can bring it back on top of any other
-       window with the focus() method. There would be no need to re-create
-       the window or to reload the referenced resource. */
-  };
-}
-</script>
-
-(...)
-
-<p><a
- href="http://www.spreadfirefox.com/"
- target="PromoteFirefoxWindowName"
- onclick="openFFPromotionPopup(); return false;"
- title="This link will create a new window or will re-use an already opened one"
->Promote Firefox adoption</a></p>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+     <a class="navbar-brand" href="#">Navbar</a>
+     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+         aria-expanded="false" aria-label="Toggle navigation"></button>
+     <div class="collapse navbar-collapse" id="collapsibleNavId">
+       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+         <li class="nav-item active">
+           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Link</a>
+         </li>
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+           <div class="dropdown-menu" aria-labelledby="dropdownId">
+             <a class="dropdown-item" href="#">Action 1</a>
+             <a class="dropdown-item" href="#">Action 2</a>
+           </div>
+         </li>
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="text" placeholder="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+       </form>
+     </div>
+   </nav>
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores delectus ab dignissimos doloribus nisi dolor excepturi labore adipisci necessitatibus asperiores deserunt nostrum rem eveniet explicabo, voluptatem, alias provident nobis tenetur.
+ Consequuntur voluptates ipsum est quis aperiam delectus fuga optio reiciendis explicabo doloribus modi sequi maiores ad iusto cum itaque maxime odit nostrum similique, tempora labore! Est ad eos temporibus sunt!
+ Perferendis omnis accusantium consectetur error esse nihil nobis suscipit velit, dolorum ipsam provident? Dignissimos assumenda sequi hic. Dicta consequuntur officiis nostrum? Inventore maiores deserunt quis rem nesciunt, laboriosam alias laborum.
+ Ea praesentium necessitatibus libero laborum, iste, fuga voluptates, ex eum doloribus dolor optio officia ullam sint? Deleniti quo, accusantium omnis quia nihil itaque, dignissimos maiores dicta eveniet quisquam enim dolorum?
+ Optio possimus aliquid impedit incidunt, iure magni saepe perspiciatis est eius fugiat omnis necessitatibus nostrum accusantium repellendus corrupti iste delectus natus totam facere temporibus culpa sint dignissimos vero beatae. Nulla!
+ Exercitationem, eum quae dolores nobis ipsum, consequuntur laborum quibusdam amet soluta sunt qui voluptatem, accusantium quia eaque repudiandae dicta! At molestiae, officia voluptates corporis similique facilis beatae adipisci itaque aut.
+ Consectetur ea eius quae illum debitis, doloremque hic eaque numquam. Eum earum quibusdam facere aut quo? Perspiciatis pariatur quisquam ex dolorum aut ullam quidem reprehenderit optio commodi obcaecati. Voluptatem, facilis.
+ Pariatur consequuntur architecto officia voluptatum eos? Dicta magnam odit, iure quod nam, alias autem dignissimos fuga, assumenda accusantium ratione. Doloribus corrupti sint necessitatibus quasi temporibus error culpa. Voluptas, neque inventore!
+ Sapiente hic mollitia adipisci eius, corrupti voluptate accusamus nulla quos? Harum, reiciendis? Temporibus, veritatis. Laborum ab nihil corporis, quo a illo eaque maxime eos animi obcaecati omnis, temporibus numquam praesentium.
+ Deserunt quia qui rem fugiat fuga provident sit nobis sed placeat quaerat quidem ducimus, ad amet autem velit ipsam aperiam tempora error! Est ea cumque ipsum, deserunt atque repellat sequi!
 </body>
 // <script>
 //   var opened = window.open("");
