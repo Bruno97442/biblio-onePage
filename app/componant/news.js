@@ -1,6 +1,6 @@
 export const newsComponant = articleData =>
 `<article class="new article${articleData._id}">
-<a class=new-link href="news-${articleData.id}">
+<a class=new-link href="news-${articleData._id}">
 
     <header>
         <h${+articleData._id === 1 ? 1 : 2}>

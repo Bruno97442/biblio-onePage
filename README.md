@@ -23,7 +23,7 @@ Tech:
 
 - Connexion et session : j'ai créer une session par la sauvegarder dans le navigateur en sessionStorage ou localStorage à configurer dans /conf/Config.js
 
-> pour tester : Login => nom : admin, password : Biblio63000%
+> pour tester : Login => nom : admin, password : Biblio6300%
 
 > j'ai mal gérer mon temps pour développer le back-end et formulaire
 

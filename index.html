@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <meta http-equiv="refresh" content="0; url=public/index.html?p=home">
+
 </head>
+
 <body>
-    
+    hello
+    <script>
+        location.href =  `/public/index.html?p=${location.pathname.match(/\/[a-z]+/) ? location.pathname.slice(1) : 'home'}`
+    </script>
 </body>
+
 </html>

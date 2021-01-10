@@ -1,14 +1,14 @@
 import { addClass, rmClass, _, __ } from "./broToolBox.js";
 import { service, compoLoop } from "./Service.js";
-// import { awards } from "./componant/awardWinnings.js";
 import { rulesComponant } from "./componant/rules.js";
 import { awardWiningsComponant } from "./componant/awardWinnings.js";
 import { newsComponant } from "./componant/news.js";
+import { FormController } from "../library/broform/app/Formcontroller.js";
 
 let template = {
     rules: rulesComponant,
     awardWinnings: awardWiningsComponant,
-    news : newsComponant
+    news: newsComponant
 }
 
 /**
@@ -17,7 +17,6 @@ let template = {
  * @returns {Promise}
  */
 async function ajax(route) {
-    console.log(route.path)
     const r = await fetch(route.path)
     return await r.text()
 }
@@ -33,14 +32,30 @@ const StrToHTML = string => {
 const loadDelegate = (route, ajaxFunc, className, template) =>
     // chercher le template page
     ajaxFunc(route).then(pageData => {
-        let main = _('.main-js')    
+        let main = _('.main-js')
         pageData = StrToHTML(pageData)
         rmClass('leave', pageData)
         addClass(className, pageData)
 
+        let formReceiver = __('form', pageData)
+        if (formReceiver) formReceiver.forEach(form => {
+            (new FormController(form,
+                {
+                    regexObject: {
+                        mi10: /.{10}/
+                    },
+                    inputType: {
+                        password: "empty low upp num spe mi10"
+                    },
+                    alert: {
+                        message: { mi10: "..10 caractères au minimum" }
+                    }
+                }
+            )).run()
+        })
         // insert data et componant article dans le template
-        let receiver = __('.data-js', pageData)
-        if (receiver) receiver.forEach(ele => {
+        let dataReceiver = __('.data-js', pageData)
+        if (dataReceiver) dataReceiver.forEach(ele => {
 
             const { componant: componantName, count } = ele.dataset
 
@@ -48,14 +63,14 @@ const loadDelegate = (route, ajaxFunc, className, template) =>
                 let injectable = compoLoop(template[componantName], compoData, count)
 
                 ele.innerHTML = injectable
-             
+
                 // loadedTabs.push({
                 //     name: Route.name,
                 //     content: pageData
                 // })
                 main.append(pageData)
             })
-            return
+
         })
         main.append(pageData)
 

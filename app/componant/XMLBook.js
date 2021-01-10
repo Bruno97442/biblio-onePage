@@ -5,10 +5,13 @@ export const XMLBook = book => {
       <by>${criticism._by}</by>
       <content>${criticism._content}</content>
     </criticism>`
+
   let criticisms = ''
+  
   for (const i in book._criticisms) {
     criticisms += criticism(book._criticisms[i])
   }
+
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <book>
   <id>${book._id}</id>

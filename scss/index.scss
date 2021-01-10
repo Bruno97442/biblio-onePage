@@ -162,6 +162,7 @@ $nul: 0;
             outline: none;
             outline-color: transparent !important;
             box-shadow: 2px 0 10px rgb(161, 161, 192);
+            animation: comeIn 0.5s ease-in;
         }
         &:focus-within {
             position: fixed;

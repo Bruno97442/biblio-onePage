@@ -16,15 +16,14 @@ import { XMLBook } from "./componant/XMLBook.js";
  * la gestion des routes est centraliser dans la class router
  * toutes les routes sont dans /config
  * session permet de stocker les droits de l'utilisateur dans le navigateur 
- * La Nav gérer les droits d'accés dans la bar de navigation
+ * La Nav gére les droits d'accés dans la bar de navigation
  */
 const R = new Router(routes),
     session = new Session(window[Config.storageMethod], Config.sessionName),
     nav = new Nav(R, _('.nav-js'))
 let loaded = []
+// en cas de refraiche de la page 
 nav.run(session.ifActive())
-// nav.render(session.ifActive())
-
 
 
 const clickManager = function (e) {
@@ -59,6 +58,7 @@ const clickManager = function (e) {
             return
         }
 
+        // charge uniquement si différent
         R.getUrl().match(routeName)
             ? null
             : loadManager(loaded, ajax, R.getRoute(routeName))
@@ -70,8 +70,9 @@ const submitManager = e => {
     let form = e.target
     e.preventDefault()
 
+    let submitUser = new FormEntity(form)
+    
     if (form.getAttribute('action') === 'logIn') {
-        let submitUser = new FormEntity(form)
         let auth = new Auth(service)
         auth.validate(submitUser).then(auth => {
             console.log(auth)
@@ -84,13 +85,15 @@ const submitManager = e => {
                 alert('identifiant ou mot de passe érroné !')
             }
         })
+    }
 
-
+    if (form.getAttribute('action') === 'usersInscription') {
+  
     }
 }
 // init navigation
-R.rewrite('home')
-loadManager(loaded, ajax, R.getRoute('home'))
+
+loadManager(loaded, ajax, R.init())
 // ..sur click
 ael('click', document, clickManager)
 // sur history back and forward

@@ -2,7 +2,7 @@ export class Router {
 
     static _instance
 
-    url
+    // url
 
     constructor(routes) {
         this.routes = routes
@@ -13,8 +13,8 @@ export class Router {
     }
 
     getUrl() {
-        this.url = window.location.pathname
-        return this.url
+        
+        return window.location.pathname
     }
 
     getRoute(name) {
@@ -29,10 +29,9 @@ export class Router {
         alert('error : 404')
     }
 
-    // match() {
-    //     return this.getRoute(this.getUrl().replace('/', ''))
-    // }
-
+    match() {
+        return this.routes.find(route => this.url().match(route))
+    }
     init() {
         if (location.pathname.match(/^\/[public]/)) {
 
@@ -50,6 +49,6 @@ export class Router {
     }
     rewrite(routeName) {
         const route = this.getRoute(routeName)
-        history.pushState(route, `${route.name} | My App`, `/${route.name}.html`)
+        history.pushState(route, `${route.name} | My App`, `/${route.name}`)
     }
 }

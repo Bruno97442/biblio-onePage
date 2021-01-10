@@ -2,30 +2,32 @@
   <div class="container">
 
     <div class="row justify-content-center">
-    <form action="usersInscription form col col-lg-6" method="post">
-        <div class="form-group">
+      <form action="usersInscription" method="post" class="form col col-lg-6">
+        <div class="form-group m-3">
           <label for="_name">Nom</label>
           <input type="text" class="form-control" name="_name" id="_name" pattern="^[a-zA-Z-'éèàîïôöü]+$">
         </div>
-        <div class="form-group">
+        <div class="form-group m-3">
           <label for="_mail">e-mail</label>
           <input type="email" class="form-control" name="_mail" id="_mail">
         </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="_role" id="_author" value="author" checked>
-            Auteur
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="_role" id="_jury" value="jury" checked>
-            Jury
-          </label>
+        <div class="form-group ml-5">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="_role" id="_author" value="author" checked>
+              Auteur
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="_role" id="_jury" value="jury">
+              Jury
+            </label>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">S'enregister</button>
-    </form>
+        <button type="submit" class="btn btn-primary float-right">S'enregister</button>
+      </form>
+    </div>
   </div>
-</div>
 </section>
