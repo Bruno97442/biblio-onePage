@@ -48,7 +48,7 @@ export class Router {
             const s = location.search
             if (s) {
                 const pos = s.match('=').index + 1,
-                    routeName = s.slice(pos)
+                    routeName = this.getRoute(s.slice(pos)).name
                 this.rewrite(routeName)
                 return this.getRoute(routeName)
             }

@@ -46,12 +46,12 @@ const loadNeeds = {
     main: _('.main-js'),
     route: {},
     router: R,
-    setRoute: settingRoute => {loadNeeds.route = R.getRoute(settingRoute); return loadNeeds},
-    setRouteRewrite: settingRoute => {loadNeeds.route = R.getRoute(settingRoute); R.rewrite(settingRoute); return loadNeeds},
-    init: ()=> {loadNeeds.route = R.init(); return loadNeeds},
+    setRoute: settingRoute => { loadNeeds.route = R.getRoute(settingRoute); return loadNeeds },
+    setRouteRewrite: settingRoute => { loadNeeds.route = R.getRoute(settingRoute); R.rewrite(settingRoute); return loadNeeds },
+    init: () => { loadNeeds.route = R.init(); return loadNeeds },
     nav: nav,
     template: template,
-    classAnimate: {comeIn: 'comeIn', leave:'leave'},
+    classAnimate: { comeIn: 'comeIn', leave: 'leave' },
     service: service,
     compoLoop: compoLoop
 }
@@ -73,6 +73,7 @@ const clickManager = function (e) {
         if (routeName === "back") {
             history.back()
             routeName = history.state.name
+
         }
         // gestion des XML leur recherche dans la bdd factice, puis la transformation en XML et sont telechargement
         if (routeName.match("XML")) {
@@ -81,7 +82,23 @@ const clickManager = function (e) {
                 xml.download(`${routeName.match(/['\w]+$/)}.xml`)
 
             })
+            return
+        }
+        // gestion des PDF leur recherche dans la bdd factice, puis la transformation en PDF et sont telechargement
+        if (routeName.match("PDF")) {
+            service(`news-${routeName.match(/[0-9]+/)[0]}`).then(data => {
+                let pdf = new PDFExtractor(data, PDFNew)
+                pdf.download(`${routeName.match(/['\w]+$/)}.pdf`)
 
+            })
+            return
+        }
+        // gestion des pages unitaire d'article ou de livre
+        if (routeName.match(/^((news)|(awardWinnings))-[0-9]+$/)) {
+            service(routeName).then(data => {
+                console.log(data)
+
+            })
             return
         }
 
@@ -136,7 +153,7 @@ ael('click', document, clickManager)
 // sur history back and forward
 window.onpopstate = function (e) {
     loadManager(loadNeeds.setRoute(e.state.name))
-
+    nav.activateLink()
 }
 // authentification enregistrement d'utilisateur, de livre ...
 

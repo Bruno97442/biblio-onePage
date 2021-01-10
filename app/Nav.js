@@ -72,7 +72,8 @@ export class Nav {
     }
 
     activateLink(className = 'active') {
-        let routeName = this.router.match().name
+        let match = this.router.match()
+        let routeName = match ? match.name : "home"
         this.HTMLLinks.forEach(link => {
             link.getAttribute('href') === routeName
             ? addClass( className, link)

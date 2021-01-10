@@ -2,7 +2,7 @@
     {
         "_id": 1,
         "_title": "Un livre bien",
-        "_description": "1 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl1.jpg",
         "_author": "Alain HAUTEUR",
         "_editor": "Acheter édition",
@@ -11,6 +11,10 @@
             {
                 "_by": "anonyme",
                 "_content": "Fabuleux"
+            },
+            {
+                "_by": "Le Laitier",
+                "_content": "Ne touche pas à mon yop"
             },
             {
                 "_by": "critique legendaire",
@@ -25,7 +29,7 @@
     {
         "_id": 2,
         "_title": "la peau de l'ours",
-        "_description": "2 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl2.jpg",
         "_author": "Natacha SOEUR",
         "_editor": "Skin édition",
@@ -48,7 +52,7 @@
     {
         "_id": 3,
         "_title": "Une biographie de folie",
-        "_description": "3 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl3.jpg",
         "_author": "Ivan TARDIZ",
         "_editor": "Celapete éditor",
@@ -57,6 +61,10 @@
             {
                 "_by": "anonyme",
                 "_content": "Fabuleux"
+            },
+            {
+                "_by": "Baby",
+                "_content": "C'est à se tâché la couche"
             },
             {
                 "_by": "critique legendaire",
@@ -71,7 +79,7 @@
     {
         "_id": 4,
         "_title": "Ave Roman",
-        "_description": "4 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl4.jpg",
         "_author": "Cesar saladine",
         "_editor": "Sparciate édition",
@@ -94,7 +102,7 @@
     {
         "_id": 5,
         "_title": "Un livre bien",
-        "_description": "5 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl5.jpg",
         "_author": "Alain HAUTEUR",
         "_editor": "Acheter édition",
@@ -117,7 +125,7 @@
     {
         "_id": 6,
         "_title": "la peau de l'ours",
-        "_description": "6 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl6.jpg",
         "_author": "Natacha SOEUR",
         "_editor": "Skin édition",
@@ -140,7 +148,7 @@
     {
         "_id": 7,
         "_title": "Une biographie de folie",
-        "_description": "7 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl7.jpg",
         "_author": "Ivan TARDIZ",
         "_editor": "Celapete éditor",
@@ -163,7 +171,7 @@
     {
         "_id": 8,
         "_title": "Ave Roman",
-        "_description": "8 c'est un livre avec une couverture, des pages ou ont peut y trouver des mots aux lettres d'impression formant des expressions impressionnante",
+        "_description": "C'est un livre avec une couverture, des pages ou on peut y trouver des mots aux lettres d'impression formant des expressions impressionnantes",
         "_cover": "/img/covers/sl8.jpg",
         "_author": "Cesar saladine",
         "_editor": "Sparciate édition",
