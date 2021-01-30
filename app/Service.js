@@ -27,15 +27,17 @@ const compoLoop = (template, data, nb = 'all') => {
  * @param {string} dataName 
  */
 const service = async dataName => {
-    let isById = dataName.match(/-[0-9]{1,}$/)
+    const isById = dataName.match(/-[0-9]{1,}$/)
     if (isById) {
-        const [DATANAME, searchedId] = dataName.split('-')
-        const    data = await fetch(`../data/${DATANAME}.json`).then(r => r.json()).then(data => data.find(items => items._id === +searchedId));
+        const [DATANAME, searchedId] = dataName.split('-'),
+            data = await fetch(`../data/${DATANAME}s.json`).then(r => r.json()).then(data => [data.find(items => items._id === +searchedId)]);
         return await data;
-    } else {
-        const r = await fetch(`../data/${dataName}.json`);
-        return await r.json();
     }
+
+
+    const r = await fetch(`../data/${dataName}.json`);
+    return await r.json();
+
 }
 
 

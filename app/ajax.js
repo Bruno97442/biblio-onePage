@@ -30,7 +30,9 @@ const loadDelegate = ({ route, ajaxFunc, main, classAnimate, template, service, 
         rmClass(leave, pageData)
         addClass(comeIn, pageData)
 
-        let formReceiver = __('form', pageData)
+        let formReceiver = __('form', pageData),
+            dataReceiver = __('.data-js', pageData)
+
         if (formReceiver) formReceiver.forEach(form => {
             (new FormController(form,
                 {
@@ -47,12 +49,11 @@ const loadDelegate = ({ route, ajaxFunc, main, classAnimate, template, service, 
             )).run()
         })
         // insert data et componant article dans le template
-        let dataReceiver = __('.data-js', pageData)
         if (dataReceiver) dataReceiver.forEach(ele => {
 
             const { componant: componantName, count } = ele.dataset
-
-            service(componantName).then(compoData => {
+            let t = route.name.match(/[\w]+-[\d]+/) ? route.name.match(/[\w]+-[\d]+/)[0] : componantName
+            service(t).then(compoData => {
                 let injectable = compoLoop(template[componantName], compoData, count)
 
                 ele.innerHTML = injectable
@@ -79,28 +80,29 @@ const loadDelegate = ({ route, ajaxFunc, main, classAnimate, template, service, 
  */
 const loadManager = (loadNeeds) => {
     let { loadedTabs, main, classAnimate, route, nav } = loadNeeds
-    let found = loadedTabs.findIndex(x => x.name === route.name)
+    // let found = loadedTabs.findIndex(x => x.name === route.name)
     // Stock l'objet en local pour charger plus rapidement après la première
-    if (found >= 0 && false) {
-        main.firstElementChild.remove()
-        main.append(loadedTabs[found].content)
-    } else {
-        if (main.firstElementChild) {
-            let child = main.firstElementChild
-            rmClass(classAnimate.comeIn, child)
-            addClass(classAnimate.leave, child)
-            nav.disabledAllToggle()
-            setTimeout(() => {
-                
-                child.remove()
-                nav.disabledAllToggle(false)
-            }, 500)
-        }
+    // if (found >= 0 && false) {
+    //     main.firstElementChild.remove()
+    //     main.append(loadedTabs[found].content)
+    // } else {
 
-        loadDelegate(loadNeeds)
+    if (main.firstElementChild) {
+        let child = main.firstElementChild
+        rmClass(classAnimate.comeIn, child)
+        addClass(classAnimate.leave, child)
+        nav.disabledAllToggle()
+        setTimeout(() => {
 
-
+            child.remove()
+            nav.disabledAllToggle(false)
+        }, 500)
     }
+
+    loadDelegate(loadNeeds)
+
+
+    // }
 }
 
 export { ajax, loadManager }

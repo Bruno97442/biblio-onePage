@@ -44,8 +44,8 @@ const loadNeeds = {
     loadedTabs: loaded,
     ajaxFunc: ajax,
     main: _('.main-js'),
-    route: {},
     router: R,
+    route: {},
     setRoute: settingRoute => { loadNeeds.route = R.getRoute(settingRoute); return loadNeeds },
     setRouteRewrite: settingRoute => { loadNeeds.route = R.getRoute(settingRoute); R.rewrite(settingRoute); return loadNeeds },
     init: () => { loadNeeds.route = R.init(); return loadNeeds },
@@ -53,12 +53,13 @@ const loadNeeds = {
     template: template,
     classAnimate: { comeIn: 'comeIn', leave: 'leave' },
     service: service,
-    compoLoop: compoLoop
+    compoLoop: compoLoop,
+    data: []
 }
 
 /**
  * Est-ce un router ou l'utilise seulement
- * autoloader permettrer d'améliorer ça gestion
+ * un factory pattern & autoloader permettrer d'améliorer ça gestion
  * note : problème d'architecture à médité
  * @param {Event} e clickEvent
  */
@@ -78,9 +79,7 @@ const clickManager = function (e) {
         // gestion des XML leur recherche dans la bdd factice, puis la transformation en XML et sont telechargement
         if (routeName.match("XML")) {
             service(`awardWinnings-${routeName.match(/[0-9]+/)[0]}`).then(data => {
-                let xml = new XMLExtractor(data, XMLBook)
-                xml.download(`${routeName.match(/['\w]+$/)}.xml`)
-
+                (new XMLExtractor(data, XMLBook)).download(`${routeName.match(/['\w]+$/)}.xml`)
             })
             return
         }
@@ -94,15 +93,14 @@ const clickManager = function (e) {
             return
         }
         // gestion des pages unitaire d'article ou de livre
-        if (routeName.match(/^((news)|(awardWinnings))-[0-9]+$/)) {
-            service(routeName).then(data => {
-                console.log(data)
-
-            })
-            return
+        if (routeName.match(/^((new)|(awardWinning)|(book))-[0-9]+$/)) {
+            routeName = `${routeName.match(/[\w]+/)[0]}s/${routeName}`
+            console.log(routeName, ' article unitaire')
+            // R.rewrite(routeName)
+            // return
         }
 
-        if (routeName === "logOut") {
+        if (routeName === "logout") {
             sessionStorage.clear()
             nav.run(session.ifActive())
             loadManager(loadNeeds.setRouteRewrite('home'))
@@ -113,7 +111,6 @@ const clickManager = function (e) {
         R.getUrl().match(routeName)
             ? null
             : loadManager(loadNeeds.setRoute(routeName))
-
         R.rewrite(routeName)
         nav.activateLink()
 
@@ -125,7 +122,7 @@ const submitManager = e => {
 
     let submitdata = new FormEntity(form)
 
-    if (form.getAttribute('action') === 'logIn') {
+    if (form.getAttribute('action') === 'login') {
         let auth = new Auth(service)
         auth.validate(submitdata).then(auth => {
             if (auth.isValidated()) {
@@ -140,6 +137,7 @@ const submitManager = e => {
     }
 
     if (form.getAttribute('action') === 'usersInscription') {
+
         session.set(submitdata)
         loadManager(loadNeeds.setRouteRewrite('dashboard'))
         nav.run(session.ifActive())

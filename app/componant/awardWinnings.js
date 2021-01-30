@@ -1,5 +1,4 @@
 export const awardWiningsComponant = book => {
-
     const criticism = criticism => `<p class="book-criticisms">
     de <span class="book-criticism-author muted font-italic">
     ${criticism._by} :
@@ -19,7 +18,7 @@ export const awardWiningsComponant = book => {
                 ${book._title}
             </span> 
         </h3>
-        <small class="tag text-muted">#${book._hash.toString().replace(',', ' #')}</small>
+        <p class="tag text-muted">#${book._hash.toString().replaceAll(',', ' #')}</p>
         <ul class="list-inline d-flex flex-wrap justify-content-center">
             <li class="list-item p-1 col-2">
                 <i class="text-primary fab fa-facebook" aria-hidden="true"></i>

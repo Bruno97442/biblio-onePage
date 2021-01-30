@@ -1,11 +1,13 @@
-export const newsComponant = articleData =>
-`<article class="article article${articleData._id}">
-<a class=new-link href="news-${articleData._id}">
+export const newsComponant = (articleData, single = false) => {
+ let content = single ? articleData._content : articleData._content.substr(0, 100) + '[...]</p>'
+
+return `<article class="article article${articleData._id}">
+<a class=new-link href="new-${articleData._id}">
 
     <header class="article-header">
         <h${+articleData._id === 1 ? 1 : 2}>
             <span class="article-puce"></span>
-            <span>${articleData._title}</span>
+            <span>${articleData._title} ${articleData._id}</span>
         </h${articleData == "une" ? 1 : 2}>
 
     </header>
@@ -16,8 +18,8 @@ export const newsComponant = articleData =>
         </picture>
     </section>
         <main>
-            ${articleData._introduction ? `<p class="h6 m-1"> ${articleData._introduction} </p>` :'' }
-            ${articleData._content ? `<p class="text-muted text-justify"> ${articleData._content.substr(0, 100)} [...]</p>` :'' }
+            <p class="h6 m-1"> ${articleData._introduction} </p>
+            ${articleData._content ? `<p class="text-muted text-justify"> ${content} `:'' }
         </main>
 
 </a>
@@ -48,3 +50,4 @@ export const newsComponant = articleData =>
     </footer> 
 </article>`
 
+}
