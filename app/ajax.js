@@ -52,9 +52,17 @@ const loadDelegate = ({ route, ajaxFunc, main, classAnimate, template, service, 
         if (dataReceiver) dataReceiver.forEach(ele => {
 
             const { componant: componantName, count } = ele.dataset
-            let t = route.name.match(/[\w]+-[\d]+/) ? route.name.match(/[\w]+-[\d]+/)[0] : componantName
+            let t, single = false
+            if (route.name.match(/[\w]+-[\d]+/)) {
+                t = route.name.match(/[\w]+-[\d]+/)[0]
+                single = true
+            }
+            else {
+                t = componantName
+            }
             service(t).then(compoData => {
-                let injectable = compoLoop(template[componantName], compoData, count)
+                console.log(single)
+                let injectable = compoLoop(template[componantName], compoData, count, single)
 
                 ele.innerHTML = injectable
 

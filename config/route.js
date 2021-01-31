@@ -38,7 +38,7 @@ export const routes = [
     },
     {
         "name": "news/new-{:id}",
-        "path": "/template/page/new.html"
+        "path": "/template/page/news.html"
     },
     {
         "name": "books/book-{:id}",

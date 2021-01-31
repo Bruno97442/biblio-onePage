@@ -7,14 +7,14 @@ import { _ } from "./broToolBox.js";
  * @param {ArrayBuffer} data 
  * @param {string} nb 'all' | nombre d'element à sortir
  */
-const compoLoop = (template, data, nb = 'all') => {
+const compoLoop = (template, data, nb = 'all', single = false) => {
 
     let block = ''
     data.forEach((element, i) => {
         nb === 'all'
-            ? block += template(element)
+            ? block += template(element, single, i === 0)
             : i < +nb
-                ? block += template(element)
+                ? block += template(element, single)
                 : null
     });
 

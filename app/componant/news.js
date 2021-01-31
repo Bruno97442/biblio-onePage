@@ -1,7 +1,8 @@
-export const newsComponant = (articleData, single = false) => {
+export const newsComponant = (articleData, single = false, une = false) => {
+    console.log(single, une)
  let content = single ? articleData._content : articleData._content.substr(0, 100) + '[...]</p>'
 
-return `<article class="article article${articleData._id}">
+return `<article class="article article${articleData._id} ${single ? 'span-all' : une ? 'une' :''}">
 <a class=new-link href="new-${articleData._id}">
 
     <header class="article-header">

@@ -1,7 +1,9 @@
 $nul: 0;
 
 // @import 'main' ;
-
+.body{
+    overflow-x: hidden;
+}
 .logo {
     position: relative;
     &-picture {
@@ -31,6 +33,7 @@ $nul: 0;
         width: 100%;
     }
 }
+
 
 .leave {
     // position: absolute !important;
@@ -70,11 +73,14 @@ $nul: 0;
 
     gap: 2rem;
 
+
     .article {
         grid-area: auto;
+
         @media (min-width: 600px) {
-            &:nth-of-type(1) {
+            &.une {
                 grid-area: span 2 / span 2;
+                
                 .article {
                     &-media {
                         float: none;
@@ -85,6 +91,11 @@ $nul: 0;
                     }
                 }
             }
+            &.span-all{
+                grid-area: span 3 / span 3;
+
+            }
+
             // &-media:nth-child(2n + 0){
             //     float: right !important;
             //     // width: 50vh;
@@ -217,8 +228,6 @@ $nul: 0;
                         height: 100%;
                         // transform: translate(-50%, -50%);
                     }
-                }
-                &-main {
                 }
             }
         }
